@@ -9,7 +9,7 @@ class Cube(object):
     w = 500
 
     # initialing the cube
-    def __init__(self, start, dirnx=1, dirny=0, color=(189, 191, 9)):
+    def __init__(self, start, dirnx=1, dirny=0, color=(220,20,60)):
         self.pos = start
         self.dirnx = dirnx
         self.dirny = dirny
@@ -134,13 +134,13 @@ def draw_grid(w, rows, surface):
         x = l * size_between
         y = l * size_between
 
-        pygame.draw.line(surface, (211, 189, 176), (x, 0), (x, w))
-        pygame.draw.line(surface, (211, 189, 176), (0, y), (w, y))
+        pygame.draw.line(surface, (253, 254, 255), (x, 0), (x, w))
+        pygame.draw.line(surface, (253, 254, 255), (0, y), (w, y))
 
 # function to redraw window in each frame
 def redraw_window(surface):
     global rows, width, s, snack
-    surface.fill((51, 38, 29)) # surface color
+    surface.fill((221,160,221)) # surface color
     s.draw(surface) # drawing the snake
     snack.draw(surface) # drawing the snack
     draw_grid(width, rows, surface) # drawing the grid
@@ -181,8 +181,8 @@ def main():
     rows = 20 # numbers of rows
     win = pygame.display.set_mode((width, width)) # creating the window
 
-    s = Snake((189, 191, 9), (10, 10)) # creating the snake
-    snack = Cube(random_snack(rows, s), color=(255, 0, 0)) # creating the snack
+    s = Snake((220,20,60), (10, 10)) # creating the snake
+    snack = Cube(random_snack(rows, s), color=(255,69,0)) # creating the snack
 
     flag = True
     clock = pygame.time.Clock()
@@ -195,7 +195,7 @@ def main():
         # checking if the snake ate the snack
         if s.body[0].pos == snack.pos:
             s.add_cube()
-            snack = Cube(random_snack(rows, s), color=(255, 0, 0))
+            snack = Cube(random_snack(rows, s), color=(255,69,0))
         
         # checking if the snake collided with itself  
         for x in range(len(s.body)):
