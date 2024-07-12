@@ -70,4 +70,4 @@ Below are key details about the code:
 
 To run the game, ensure Python is installed along with the required modules (Pygame, tkinter). Execute the file and control the snake using the arrow keys.
 
-Feel free to fork and modifid the game as you wish 😊
+Feel free to fork and modify the game as you wish 😊
